@@ -1,30 +1,29 @@
 const dom = document.body;
 
-const hello = document.createElement("p");
+// const grandparent = document.querySelector(".grandparent")
 
-hello.innerText = "Hello everyone!";
+// createPTagWithStyle(grandparent,"green","This is grand-parent!")
 
-hello.style.color = "black";
+const parent = document.querySelectorAll(".parent")
 
-const div = document.createElement("div");
+const gp = parent[0].closest(".grandparent")
 
-div.style.textAlign = "center"
+createPTagWithStyle(gp,"green","This is grand-parent!")
 
-const well = document.createElement("p");
+createPTagWithStyle(parent[0],"red","This is parent 1!")
+createPTagWithStyle(parent[1],"red","This is parent 2!")
 
-well.innerText = "Hope you guys are well!"
+function createPTagWithStyle(parent,color,text){
+    parent.style.backgroundColor = color
+    parent.style.margin = "100px 100px 100px 100px"
+    parent.style.padding = "100px 100px 100px 100px"
 
-well.style.color = "white";
-well.style.backgroundColor = "black"
+    const ptag = document.createElement("p")
 
-const link = document.createElement("button")
+    ptag.innerText = text
+    ptag.style.textAlign = "center"
+    ptag.style.color = "white"
+    ptag.style.fontSize = "24px"
 
-link.innerHTML = "<a style='color:white' href='https://www.youtube.com/watch?v=y17RuWkWdn8&ab_channel=WebDevSimplified'>Click me to open YT</a>"
-
-link.classList.add("btn-primary")
-
-div.append(hello)
-div.append(well)
-div.append(link)
-
-dom.append(div)
+    parent.append(ptag)
+}
