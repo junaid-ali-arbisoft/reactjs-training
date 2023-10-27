@@ -9,22 +9,34 @@
 </head>
 <body>
     <div class="container">
-        <form>
             <div class="form-box">
-                <div class="input-group">
-                    <div class="title">
-                        <h1>Todo</h1>
-                        <div id="dateTitle">
-                            <i class="fa-solid fa-calendar-days"></i>
+                <div class="title">
+                    <h1>Todo</h1>
+                    <div class="date-title">
+                        <div class="side-date">
+                            <h2>Today</h2>
                             <h2 id="dateLabel"></h2>
                         </div>
+                        <i class="fa-solid fa-calendar-days"></i>
                     </div>
-                    <div class="input-field">
-
+                </div>
+                <div class="input-group">
+                    <div class="input-field-row">
+                        <input type="text" placeholder="Add a new task">
+                        <button type="button">+</button>
+                    </div>
+                    <div class="input-field-column">
+                        <div class="checkbox-wrapper">
+                            <input id="task1" type="checkbox"/>
+                            <label for="task1">Buy Water</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input id="task2" type="checkbox"/>
+                            <label for="task2">Buy Soap</label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </form>
     </div>
 </body>
 </html>
